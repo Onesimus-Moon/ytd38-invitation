@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d0c0a">
+  <meta name="description" content="YTD 38기 사랑의 불꽃잔치 수양회 초대장. 2026년 10월 8일(목)부터 10일(토)까지, 여의도침례교회 드림센터.">
+  <title>YTD 38기 수양회 | 당신을 초대합니다</title>
+  <style>
+    :root { color-scheme:dark; --bg:#0d0c0a; --surface:#171512; --gold:#d6b980; --pale:#e9d6b1; --white:#f7f2e9; --muted:#c1b4a0; --line:#534938; }
+    * { box-sizing:border-box; }
+    [hidden] { display:none !important; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--white); font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif; -webkit-font-smoothing:antialiased; }
+    button,a { -webkit-tap-highlight-color:transparent; }
+    button:focus-visible,a:focus-visible { outline:2px solid var(--pale); outline-offset:4px; }
+    .page { max-width:920px; margin:auto; overflow:hidden; background:var(--bg); box-shadow:0 20px 100px #0009; }
+    .poster-wrap { position:relative; overflow:hidden; }
+    .poster { display:block; width:100%; height:auto; animation:poster-in 1.1s ease-out both; }
+    .poster-wrap::after { content:""; position:absolute; left:-35%; bottom:0; width:35%; height:2px; background:linear-gradient(90deg,transparent,var(--pale),transparent); animation:glint 3s ease-in-out 1.4s 2; }
+    .poster-link { display:flex; align-items:center; justify-content:center; min-height:52px; padding:0 24px; border-bottom:1px solid var(--line); background:#211b14; color:var(--white); text-decoration:none; font-size:14px; font-weight:650; transition:background .2s; }
+    .poster-link:hover { background:#3a2d1c; }
+    main { padding:0 clamp(25px,7vw,72px) 75px; }
+    .invitation { text-align:center; padding:86px 0 80px; border-bottom:1px solid var(--line); }
+    .overline { display:block; color:var(--gold); font-size:12px; font-weight:600; letter-spacing:.3em; }
+    h1 { margin:26px 0 22px; font-size:clamp(31px,5.8vw,56px); font-weight:650; line-height:1.38; letter-spacing:-.07em; word-break:keep-all; }
+    .invitation p { margin:0; color:var(--muted); font-size:clamp(16px,2vw,19px); line-height:1.8; }
+    .ornament { width:38px; height:1px; background:var(--gold); margin:38px auto 0; }
+    .countdown { display:none; margin:55px auto 0; max-width:490px; }
+    .countdown.ready { display:block; }
+    .countdown-title { color:var(--gold); font-size:13px; font-weight:650; letter-spacing:.06em; margin-bottom:18px; }
+    .countdown-values { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+    .countdown-unit { padding:16px 5px 14px; border:1px solid var(--line); background:var(--surface); }
+    .countdown-unit strong { display:block; font:normal clamp(25px,5vw,42px)/1.1 Georgia,"Times New Roman",serif; color:var(--pale); font-variant-numeric:tabular-nums; }
+    .countdown-unit span { display:block; margin-top:9px; color:var(--muted); font-size:12px; }
+    .countdown-message { color:var(--pale); font-size:18px; }
+    .details { padding:78px 0 40px; scroll-margin-top:20px; }
+    h2 { font-size:clamp(29px,4vw,38px); letter-spacing:-.06em; line-height:1.35; margin:15px 0 35px; font-weight:650; }
+    dl { margin:0; }
+    .row { display:grid; grid-template-columns:130px 1fr; gap:20px; padding:27px 0; border-top:1px solid var(--line); }
+    .row:last-child { border-bottom:1px solid var(--line); }
+    dt { font-size:15px; color:var(--gold); font-weight:650; padding-top:4px; }
+    dd { margin:0; font-size:clamp(17px,2.25vw,22px); line-height:1.55; font-weight:550; letter-spacing:-.04em; word-break:keep-all; }
+    dd small { display:block; font-size:15px; color:var(--muted); font-weight:400; margin-top:5px; letter-spacing:-.02em; }
+    .departure { margin-top:34px; padding:30px 35px; background:var(--surface); border:1px solid var(--line); display:flex; gap:30px; align-items:start; }
+    .departure strong { color:var(--gold); white-space:nowrap; font-size:16px; }
+    .departure p { margin:0; line-height:1.7; color:var(--white); font-size:16px; word-break:keep-all; }
+    .actions { text-align:center; margin-top:43px; }
+    .calendar-button { display:inline-flex; justify-content:center; align-items:center; min-height:50px; min-width:182px; padding:0 24px; background:var(--gold); border:1px solid var(--gold); border-radius:2px; color:#201a11; font:700 15px inherit; font-family:inherit; font-size:15px; cursor:pointer; transition:transform .2s,background .2s; }
+    .calendar-button:hover { transform:translateY(-2px); background:var(--pale); }
+    .actions small { display:block; color:var(--muted); font-size:12px; margin-top:13px; }
+    footer { text-align:center; padding-top:77px; color:var(--gold); font:400 14px Georgia,"Times New Roman",serif; letter-spacing:.25em; }
+    .motion .reveal { opacity:0; transform:translateY(24px); transition:opacity .7s ease,transform .7s ease; }
+    .motion .reveal.visible { opacity:1; transform:none; }
+    @keyframes poster-in { from { opacity:.3; transform:scale(1.035); } to { opacity:1; transform:scale(1); } }
+    @keyframes glint { to { left:110%; } }
+    @media(max-width:560px) {
+      .poster-link { min-height:48px; font-size:13px; }
+      .invitation { padding:66px 0 62px; }
+      .details { padding:60px 0 24px; }
+      .row { grid-template-columns:85px 1fr; gap:8px; padding:24px 0; }
+      .departure { display:block; padding:27px; }
+      .departure p { margin-top:12px; }
+      footer { padding-top:61px; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .poster,.poster-wrap::after { animation:none; } .motion .reveal { opacity:1; transform:none; transition:none; } .calendar-button { transition:none; } }
+    @media print { body { background:#fff; } .page { box-shadow:none; } .page,.departure { -webkit-print-color-adjust:exact; print-color-adjust:exact; } .poster-link,.actions { display:none; } .motion .reveal { opacity:1; transform:none; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="poster-wrap">
+      <img class="poster" src="YTD 38기 홍보물.png" width="1024" height="1024" alt="여의도침례교회 YTD 38기 사랑의 불꽃잔치 수양회 홍보물: 10월 8일부터 10일까지 장심리 드림센터">
+      <a class="poster-link" href="#details">초대장 자세히 보기 ↓</a>
+    </header>
+    <main>
+      <section class="invitation reveal" aria-label="초대의 말">
+        <span class="overline">AN INVITATION TO YOU</span>
+        <h1>YTD 38기에<br>소중한 당신을 초대합니다.</h1>
+        <p>함께하는 3일, 그 자리에서 만나 뵙겠습니다.</p>
+        <div class="ornament" aria-hidden="true"></div>
+        <div class="countdown" id="countdown" aria-label="버스 출발까지 남은 시간">
+          <div class="countdown-title">함께 출발하기까지</div>
+          <div class="countdown-values" id="countdown-values">
+            <div class="countdown-unit"><strong id="days">–</strong><span>일</span></div>
+            <div class="countdown-unit"><strong id="hours">–</strong><span>시간</span></div>
+            <div class="countdown-unit"><strong id="minutes">–</strong><span>분</span></div>
+            <div class="countdown-unit"><strong id="seconds">–</strong><span>초</span></div>
+          </div>
+          <div class="countdown-message" id="countdown-message" hidden></div>
+        </div>
+      </section>
+      <section class="details reveal" id="details" aria-labelledby="details-heading">
+        <span class="overline">YTD 38TH RETREAT</span>
+        <h2 id="details-heading">수양회 안내</h2>
+        <dl>
+          <div class="row"><dt>일정</dt><dd>2026년 10월 8일(목) ~ 10일(토)</dd></div>
+          <div class="row"><dt>장소</dt><dd>여의도침례교회 드림센터<small>경기도 광주시</small></dd></div>
+          <div class="row"><dt>출발 장소</dt><dd>여의도침례교회 교육관 1층 더워드카페</dd></div>
+          <div class="row"><dt>출발 시간</dt><dd>10월 8일(목) 오전 7시<small>모여서 함께 버스로 출발합니다.</small></dd></div>
+        </dl>
+      </section>
+      <aside class="departure reveal" aria-label="출발 안내"><strong>함께 출발합니다</strong><p>10월 8일(목) 오전 7시, 교육관 1층 더워드카페에서 모여 버스로 출발합니다.</p></aside>
+      <div class="actions reveal"><button class="calendar-button" id="calendar-button" type="button">일정에 추가하기</button><small>10월 8일~10일 종일 일정으로 저장됩니다.</small></div>
+      <footer>Y O I D O &nbsp; T H R E E &nbsp; D A Y S</footer>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const departure = new Date('2026-10-08T07:00:00+09:00').getTime();
+      const finish = new Date('2026-10-11T00:00:00+09:00').getTime();
+      const countdown = document.getElementById('countdown');
+      const values = document.getElementById('countdown-values');
+      const message = document.getElementById('countdown-message');
+      function tick() {
+        const remaining = departure - Date.now();
+        if (remaining <= 0) {
+          values.hidden = true;
+          message.hidden = false;
+          message.textContent = Date.now() < finish ? '수양회가 진행 중입니다.' : '수양회 일정이 종료되었습니다.';
+          countdown.classList.add('ready');
+          return;
+        }
+        const total = Math.floor(remaining / 1000);
+        document.getElementById('days').textContent = Math.floor(total / 86400);
+        document.getElementById('hours').textContent = String(Math.floor(total % 86400 / 3600)).padStart(2,'0');
+        document.getElementById('minutes').textContent = String(Math.floor(total % 3600 / 60)).padStart(2,'0');
+        document.getElementById('seconds').textContent = String(total % 60).padStart(2,'0');
+        countdown.classList.add('ready');
+      }
+      tick();
+      setInterval(tick, 1000);
+
+      if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+          });
+        }, { threshold:0.08 });
+        document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+        document.body.classList.add('motion');
+      }
+
+      document.getElementById('calendar-button').addEventListener('click', () => {
+        const now = new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
+        const lines = [
+          'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//YTD//38th Retreat//KO',
+          'BEGIN:VEVENT','UID:ytd38-retreat-20261008@ytd.local','DTSTAMP:' + now,
+          'DTSTART;VALUE=DATE:20261008','DTEND;VALUE=DATE:20261011',
+          'SUMMARY:YTD 38기 수양회',
+          'LOCATION:여의도침례교회 드림센터 (경기도 광주시)',
+          'DESCRIPTION:10월 8일(목) 오전 7시 여의도침례교회 교육관 1층 더워드카페에서 모여 버스로 출발합니다.',
+          'END:VEVENT','END:VCALENDAR'
+        ];
+        const blob = new Blob([lines.join('\r\n') + '\r\n'], { type:'text/calendar;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'YTD 38기 수양회.ics';
+        document.body.append(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(link.href), 60000);
+      });
+    })();
+  </script>
+</body>
+</html>
