@@ -45,6 +45,12 @@
     .departure { margin-top:34px; padding:30px 35px; background:var(--surface); border:1px solid var(--line); display:flex; gap:30px; align-items:start; }
     .departure strong { color:var(--gold); white-space:nowrap; font-size:16px; }
     .departure p { margin:0; line-height:1.7; color:var(--white); font-size:16px; word-break:keep-all; }
+    .chat { margin-top:65px; padding:38px 40px; border:1px solid var(--gold); background:var(--surface); }
+    .chat h2 { margin:14px 0 16px; font-size:clamp(25px,3.4vw,32px); }
+    .chat p { margin:0; color:var(--white); font-size:16px; line-height:1.75; word-break:keep-all; }
+    .chat .example { margin-top:10px; color:var(--muted); font-size:14px; }
+    .chat-link { display:inline-flex; align-items:center; justify-content:center; min-height:50px; margin-top:27px; padding:0 25px; background:var(--gold); color:#201a11; font-size:15px; font-weight:700; text-decoration:none; transition:transform .2s,background .2s; }
+    .chat-link:hover { transform:translateY(-2px); background:var(--pale); }
     .actions { text-align:center; margin-top:43px; }
     .calendar-button { display:inline-flex; justify-content:center; align-items:center; min-height:50px; min-width:182px; padding:0 24px; background:var(--gold); border:1px solid var(--gold); border-radius:2px; color:#201a11; font:700 15px inherit; font-family:inherit; font-size:15px; cursor:pointer; transition:transform .2s,background .2s; }
     .calendar-button:hover { transform:translateY(-2px); background:var(--pale); }
@@ -61,6 +67,8 @@
       .row { grid-template-columns:85px 1fr; gap:8px; padding:24px 0; }
       .departure { display:block; padding:27px; }
       .departure p { margin-top:12px; }
+      .chat { margin-top:55px; padding:30px 27px; }
+      .chat-link { display:flex; width:100%; }
       footer { padding-top:61px; }
     }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .poster,.poster-wrap::after { animation:none; } .motion .reveal { opacity:1; transform:none; transition:none; } .calendar-button { transition:none; } }
@@ -101,6 +109,13 @@
         </dl>
       </section>
       <aside class="departure reveal" aria-label="출발 안내"><strong>함께 출발합니다</strong><p>10월 8일(목) 오전 7시, 교육관 1층 더워드카페에서 모여 버스로 출발합니다.</p></aside>
+      <section class="chat reveal" aria-labelledby="chat-heading">
+        <span class="overline">YTD 38TH OPEN CHAT</span>
+        <h2 id="chat-heading">공지방에 입장해 주세요</h2>
+        <p>선정된 YTD 38기 지원자 전용 오픈채팅방입니다. 주요 공지를 받으시려면 반드시 입장해 주세요.</p>
+        <p class="example">입장 후 표시 이름: 교구 + 실명 (예: 7교구 홍길동)</p>
+        <a class="chat-link" href="https://open.kakao.com/o/guYTWVMi" target="_blank" rel="noopener noreferrer">오픈채팅방 입장하기 ↗</a>
+      </section>
       <div class="actions reveal"><button class="calendar-button" id="calendar-button" type="button">일정에 추가하기</button><small>10월 8일~10일 종일 일정으로 저장됩니다.</small></div>
       <footer>Y O I D O &nbsp; T H R E E &nbsp; D A Y S</footer>
     </main>
